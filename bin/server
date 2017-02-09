@@ -1,0 +1,6 @@
+# Temporary fix for https://github.com/puma/puma/issues/1046
+if [ $# -eq 0 ]; then
+  rails server -b 127.0.0.1
+else
+  rails server $@
+fi
