@@ -3,16 +3,16 @@
 # Any libraries that use thread pools should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum, this matches the default thread size of Active Record.
-#
+
 threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }.to_i
 threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests, default is 3000.
-#
+
 port        ENV.fetch('PORT') { 3000 }
 
 # Specifies the `environment` that Puma will run in.
-#
+
 environment ENV.fetch('RAILS_ENV') { 'development' }
 
 # Specifies the number of `workers` to boot in clustered mode.
@@ -20,8 +20,9 @@ environment ENV.fetch('RAILS_ENV') { 'development' }
 # the concurrency of the application would be max `threads` * `workers`.
 # Workers do not work on JRuby or Windows (both of which do not support
 # processes).
-#
-# workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+
+# NOTE: Concurrency should be 2 here but there's a bug when exiting puma (see bin/server).
+workers ENV.fetch('WEB_CONCURRENCY') { 1 }
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
@@ -29,8 +30,8 @@ environment ENV.fetch('RAILS_ENV') { 'development' }
 # process behavior so workers use less memory. If you use this option
 # you need to make sure to reconnect any threads in the `on_worker_boot`
 # block.
-#
-# preload_app!
+
+preload_app!
 
 # The code in the `on_worker_boot` will be called if you are using
 # clustered mode by specifying a number of `workers`. After each worker
@@ -39,9 +40,9 @@ environment ENV.fetch('RAILS_ENV') { 'development' }
 # or connections that may have been created at application boot, Ruby
 # cannot share connections between processes.
 #
-# on_worker_boot do
-#   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
-# end
+on_worker_boot do
+  ActiveRecord::Base.establish_connection if defined? ActiveRecord
+end
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
