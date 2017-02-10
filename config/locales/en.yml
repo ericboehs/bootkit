@@ -22,3 +22,7 @@
 en:
   global:
     app_name: bootkit
+
+  nav:
+    about: About
+    log_in:  Log in
