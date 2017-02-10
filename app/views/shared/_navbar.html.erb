@@ -1,15 +1,27 @@
-<nav class="uk-navbar-container" uk-navbar>
-  <div class="uk-navbar-left">
-    <%= link_to t('global.app_name'), root_path, class: 'uk-logo uk-navbar-item' %>
+<div class="uk-position-relative">
+      <img src="https://d25p3ki7p6qa3z.cloudfront.net/assets/home/gfx-hero-372ffdfb81b665172fe8378a965c2a357f568ada28cae518208257df8cd8c68e.png" alt="">
+      <div class="uk-position-top">
+  <nav class="uk-light uk-navbar-container uk-navbar-transparent" uk-navbar>
+    <div class="uk-navbar-left">
 
-    <ul class="uk-navbar-nav">
-      <%= active_li_link_to t('nav.about'), about_path %>
-    </ul>
-  </div>
+      <ul class="uk-navbar-nav">
+        <%= active_li_link_to t('nav.women'), about_path %>
+        <%= active_li_link_to t('nav.weddings'), about_path %>
+        <%= active_li_link_to t('nav.style_insider'), about_path %>
+        <%= active_li_link_to t('nav.blog'), 'https://blog.indiaboulevard.com' %>
+      </ul>
+    </div>
 
-  <div class="uk-navbar-right">
-    <ul class="uk-navbar-nav">
-      <%= active_li_link_to t('nav.log_in'), root_path %>
-    </ul>
-  </div>
-</nav>
+    <div class="uk-navbar-center">
+      <%= link_to t('global.app_name'), root_path, class: 'uk-logo uk-navbar-item' %>
+    </div>
+
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <%= active_li_link_to t('nav.log_in'), root_path %>
+        <%= active_li_link_to t('nav.get_started'), root_path %>
+      </ul>
+    </div>
+  </nav>
+</div>
+</div>
