@@ -24,5 +24,10 @@ en:
     app_name: bootkit
 
   nav:
-    about: About
-    log_in:  Log in
+    link: Link
+    log_in: Log In
+    get_started: Get Started
+    drop:
+      account: Account
+      messages: Messages
+      log_out: Log Out

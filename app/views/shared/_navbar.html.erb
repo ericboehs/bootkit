@@ -1,15 +1,39 @@
 <nav class="uk-navbar-container" uk-navbar>
   <div class="uk-navbar-left">
-    <%= link_to t('global.app_name'), root_path, class: 'uk-logo uk-navbar-item' %>
-
     <ul class="uk-navbar-nav">
-      <%= active_li_link_to t('nav.about'), about_path %>
+      <%= active_li_link_to t('nav.link'), about_path %>
+      <%= active_li_link_to t('nav.link'), about_path %>
+      <%= active_li_link_to t('nav.link'), about_path %>
+      <%= active_li_link_to t('nav.link'), about_path %>
     </ul>
+  </div>
+
+  <div class="uk-navbar-center">
+    <%= link_to root_path, class: 'uk-logo uk-navbar-item' do %>
+      <%= inline_svg 'logo.svg' %>
+    <% end %>
   </div>
 
   <div class="uk-navbar-right">
     <ul class="uk-navbar-nav">
-      <%= active_li_link_to t('nav.log_in'), root_path %>
+
+      <% if false #user logged in %>
+        <li class="uk-navbar-item">
+          <a href="#"><span uk-icon="icon: user"></span>&nbsp;<%= "John Doe" || current_user.name %></a>
+          <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+              <%= active_li_link_to t('nav.drop.account'), about_path %>
+              <%= active_li_link_to t('nav.drop.orders'), about_path %>
+              <%= active_li_link_to t('nav.drop.messages'), about_path %>
+              <li class="uk-nav-divider"></li>
+              <li><%= link_to t('nav.drop.log_out'), about_path %></li>
+            </ul>
+          </div>
+        </li>
+      <% else %>
+        <%= active_li_link_to t('nav.log_in'), about_path %>
+        <li class="uk-navbar-item"><%= button_to t('nav.get_started'), about_path, class: "uk-button uk-button-default" %></li>
+      <% end %>
     </ul>
   </div>
 </nav>

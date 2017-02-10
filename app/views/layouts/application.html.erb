@@ -11,10 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.9/js/uikit.min.js"></script>
   </head>
 
-  <body>
+  <body class="<%= body_class %>">
+    <%= yield %>
     <%= render 'shared/navbar' %>
-    <div class="uk-container uk-container-center">
-      <%= yield %>
-    </div>
   </body>
 </html>
