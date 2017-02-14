@@ -17,22 +17,24 @@
   <div class="uk-navbar-right">
     <ul class="uk-navbar-nav">
 
-      <% if false #user logged in %>
+      <% if current_user.present? %>
         <li class="uk-navbar-item">
-          <a href="#"><span uk-icon="icon: user"></span>&nbsp;<%= "John Doe" || current_user.name %></a>
-          <div uk-dropdown>
+          <a href="#"><span uk-icon="icon: user"></span>&nbsp;<%= current_user.name %></a>
+          <div uk-dropdown="offset: -10; mode: click">
             <ul class="uk-nav uk-dropdown-nav">
-              <%= active_li_link_to t('nav.drop.account'), about_path %>
-              <%= active_li_link_to t('nav.drop.orders'), about_path %>
+              <%= active_li_link_to t('nav.drop.account'), edit_user_path(current_user) %>
               <%= active_li_link_to t('nav.drop.messages'), about_path %>
               <li class="uk-nav-divider"></li>
-              <li><%= link_to t('nav.drop.log_out'), about_path %></li>
+              <li><%= link_to t('nav.drop.log_out'), logout_path, method: :delete %></li>
             </ul>
           </div>
         </li>
       <% else %>
-        <%= active_li_link_to t('nav.log_in'), about_path %>
-        <li class="uk-navbar-item"><%= button_to t('nav.get_started'), about_path, class: "uk-button uk-button-default" %></li>
+        <%= active_li_link_to t('nav.log_in'), login_path %>
+        <li class="uk-navbar-item">
+          <%= button_to t('nav.get_started'), signup_path, method: :get,
+            class: "uk-button uk-button-default" %>
+        </li>
       <% end %>
     </ul>
   </div>

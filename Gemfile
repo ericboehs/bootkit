@@ -4,8 +4,9 @@ ruby '2.3.3'
 
 gem 'rails', '5.0.1'
 
-gem 'pg',   '~> 0.18.0'       # Postgres Database adapter for ActiveRecord
-gem 'puma', '~> 3.6.0'        # Fast, threaded web server
+gem 'bcrypt',     '~> 3.1.0'   # Use ActiveModel has_secure_password
+gem 'pg',         '~> 0.18.0'  # Postgres Database adapter for ActiveRecord
+gem 'puma',       '~> 3.6.0'   # Fast, threaded web server
 
 # Assets
 gem 'jquery-rails',   '~> 4.2.0'  # Use jquery as the JavaScript library
@@ -24,5 +25,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'minitest' # Inlcude the latest version of minitest
+  gem 'capybara'            # Acceptance testing
+  gem 'minitest'            # Inlcude the latest version of minitest
+  gem 'selenium-webdriver'  # Capybara system testing with Chrome; be sure to: brew install chromedriver
 end

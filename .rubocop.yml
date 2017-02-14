@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   Include:
   - "**/*.rake"
@@ -5,7 +7,8 @@ AllCops:
   - "**/Rakefile"
   Exclude:
   - "vendor/**/*"
-  - "db/**/*"
+  - "db/schema.rb"
+  - "test/helpers/shared_database_connection.rb"
   DisplayCopNames: true
   TargetRubyVersion: 2.3
 

@@ -11,5 +11,11 @@
         <%= flash[:error] %>
       </div>
     <% end %>
+
+    <% if flash[:alert] %>
+      <div class="uk-alert uk-alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
   </div>
 <% end %>
