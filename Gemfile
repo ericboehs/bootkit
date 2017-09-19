@@ -17,6 +17,7 @@ end
 group :development, :test do
   gem 'pry-awesome_print'  # Auto AP in pry
   gem 'pry-rails'          # Adds pry, an interactive REPL debugger; Try show-models
+  gem 'rubocop'            # Ruby Style Guide Analyzer
 end
 
 group :test do

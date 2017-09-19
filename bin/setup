@@ -6,18 +6,18 @@ include FileUtils
 # path to your application root.
 APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
 
-def system! *args
+def system!(*args)
   system(*args) || abort("\n== Command #{args} failed ==")
 end
 
-def ensure_binary_installed binary
+def ensure_binary_installed(binary)
   return unless `command -v #{binary}`.empty?
   puts '== Binary Missing =='
   puts "Please install #{binary} before proceeding (e.g. brew install #{binary})"
   exit 1
 end
 
-def ensure_process_running process
+def ensure_process_running(process)
   return unless `pgrep #{process}`.empty?
   puts '== Process Not Running =='
   puts "Please start #{process} before proceeding (e.g. brew services start #{process})"
