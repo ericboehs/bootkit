@@ -4,6 +4,7 @@ ruby '~> 2.4'
 
 gem 'rails', '~> 5.1.4'
 
+gem 'bcrypt',     '~> 3.1.0'  # Use ActiveModel has_secure password
 gem 'pg',         '~> 0.21.0' # Postgres Database adapter for ActiveRecord
 gem 'puma',       '~> 3.10.0' # Fast, threaded web server
 gem 'sass-rails', '~> 5.0.0'  # Sass CSS Preprocessor

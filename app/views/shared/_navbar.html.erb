@@ -1,0 +1,29 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <%= active_li_link_to 'Home', root_url %>
+      <%= active_li_link_to 'About', about_url %>
+    </ul>
+  </div>
+
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <% if current_user.present? %>
+        <li class="uk-navbar-item">
+          <a href="#"><span class="uk-margin-small-right" uk-icon="icon: user"></span><%= current_user.name %></a>
+          <div uk-dropdown="offset: -10; mode: click">
+            <ul class="uk-nav uk-dropdown-nav">
+              <%= active_li_link_to t('nav.drop.account'), edit_user_path(current_user) %>
+              <%= active_li_link_to t('nav.drop.about'), about_path %>
+              <li class="uk-nav-divider"></li>
+              <li><%= link_to t('nav.drop.log_out'), logout_path, method: :delete %></li>
+            </ul>
+          </div>
+        </li>
+      <% else %>
+        <%= active_li_link_to t('nav.log_in'), login_path %>
+        <%= active_li_link_to t('nav.sign_up'), signup_path %>
+      <% end %>
+    </ul>
+  </div>
+</nav>

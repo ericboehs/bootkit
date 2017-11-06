@@ -1,5 +1,5 @@
 # Parent Mailer that all Mailers inherit
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'bootkit@example.com'
   layout 'mailer'
 end
