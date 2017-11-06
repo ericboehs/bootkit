@@ -1,0 +1,10 @@
+{
+  "name": "bootkit",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate db:seed"
+  },
+  "env": { },
+  "formation": { },
+  "addons": [  ],
+  "buildpacks": [ ],
+}
