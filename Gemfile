@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '2.6.5'
@@ -18,6 +20,8 @@ end
 group :development, :test do
   gem 'pry-awesome_print' # Auto AP in pry
   gem 'pry-rails'         # Adds pry, an interactive REPL debugger; Try show-models
+  gem 'rubocop'           # Ruby Style Guide Analyzer
+  gem 'rubocop-rails'     # Add Rails specific cops to RuboCop
 end
 
 group :test do
