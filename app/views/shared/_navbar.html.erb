@@ -1,0 +1,22 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <%= active_li_link_to t('nav.link'), root_path %>
+      <%= active_li_link_to t('nav.link'), root_path %>
+      <%= active_li_link_to t('nav.link'), root_path %>
+      <%= active_li_link_to t('nav.link'), root_path %>
+    </ul>
+  </div>
+
+  <div class="uk-navbar-center">
+    <%= link_to 'Bootkit', root_path, class: 'uk-logo uk-navbar-item' %>
+  </div>
+
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li class="uk-navbar-item">
+        <%= link_to t('nav.get_started'), root_path %>
+      </li>
+    </ul>
+  </div>
+</nav>
