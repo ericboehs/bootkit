@@ -1,0 +1,21 @@
+<% if flash.any? %>
+   <div class="uk-margin-top">
+     <% if flash[:notice] %>
+       <div class="uk-alert uk-alert-success">
+         <%= flash[:notice] %>
+       </div>
+     <% end %>
+
+      <% if flash[:error] %>
+       <div class="uk-alert uk-alert-danger">
+         <%= flash[:error] %>
+       </div>
+     <% end %>
+
+     <% if flash[:alert] %>
+       <div class="uk-alert uk-alert-danger">
+         <%= flash[:alert] %>
+       </div>
+     <% end %>
+   </div>
+ <% end %>
