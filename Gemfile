@@ -6,6 +6,7 @@ ruby '2.6.5'
 
 gem 'rails', '~> 6.0.0'
 
+gem 'bcrypt',      '~> 3.1.0' # Use ActiveModel has_secure_password
 gem 'bootsnap',    '~> 1.4.5', require: false # Reduces boot times through caching
 gem 'pg',          '~> 1.1.0' # Postgres Database adapter for ActiveRecord
 gem 'puma',        '~> 4.3.0' # Fast, threaded web server

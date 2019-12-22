@@ -1,0 +1,18 @@
+<div class="uk-width-large uk-margin-top uk-align-center">
+  <h1><%= t '.log_in' %></h1>
+
+  <%= form_tag login_path do %>
+    <div class="uk-margin">
+      <%= text_field_tag :email, @user.email, placeholder: t('.email'), autofocus: true,
+        class: 'uk-input uk-form-large' %>
+    </div>
+
+    <div class="uk-margin">
+      <%= password_field_tag :password, nil, placeholder: t('.password'), class: 'uk-input uk-form-large' %>
+    </div>
+
+    <div class="uk-margin">
+      <%= submit_tag t('.log_in'), class: 'uk-button uk-button-large uk-button-primary' %>
+    </div>
+  <% end %>
+</div>

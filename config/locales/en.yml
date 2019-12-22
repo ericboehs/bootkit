@@ -32,4 +32,9 @@
 en:
   nav:
     link: Link
+    log_in: Log In
     get_started: Get Started
+    drop:
+      account: Account
+      messages: Messages
+      log_out: Log Out

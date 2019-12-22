@@ -14,9 +14,24 @@
 
   <div class="uk-navbar-right">
     <ul class="uk-navbar-nav">
-      <li class="uk-navbar-item">
-        <%= link_to t('nav.get_started'), root_path %>
-      </li>
+      <% if current_user.present? %>
+        <li class="uk-navbar-item">
+          <a href="#"><span uk-icon="icon: user"></span>&nbsp;<%= current_user.name %></a>
+          <div uk-dropdown="offset: -10; mode: click">
+            <ul class="uk-nav uk-dropdown-nav">
+              <%#= active_li_link_to t('nav.drop.account'), edit_user_path(current_user) %>
+              <%= active_li_link_to t('nav.drop.messages'), root_path %>
+              <li class="uk-nav-divider"></li>
+              <li><%= link_to t('nav.drop.log_out'), logout_path, method: :delete %></li>
+            </ul>
+          </div>
+        </li>
+      <% else %>
+        <%= active_li_link_to t('nav.log_in'), login_path %>
+        <li class="uk-navbar-item">
+          <%= button_to t('nav.get_started'), root_path, method: :get, class: 'uk-button uk-button-default' %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
