@@ -1,54 +1,18 @@
-inherit_from: .rubocop_todo.yml
+require: rubocop-rails
 
 AllCops:
-  Include:
-  - "**/*.rake"
-  - "**/Gemfile"
-  - "**/Rakefile"
   Exclude:
-  - "vendor/**/*"
   - "db/schema.rb"
-  - "test/helpers/shared_database_connection.rb"
-  DisplayCopNames: true
-  TargetRubyVersion: 2.3
+  - "node_modules/**/*"
 
 Rails:
   Enabled: true
 
-Style/MethodDefParentheses:
-  Description: Checks if the method definitions have or don't have parentheses.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#method-parens
+Layout/LineLength:
+  Description: Limit lines to 120 characters.
   Enabled: true
-  EnforcedStyle: require_no_parentheses
-  SupportedStyles:
-  - require_parentheses
-  - require_no_parentheses
-
-Metrics/LineLength:
-  Description: Limit lines to 110 characters.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
-  Enabled: true
-  Max: 110
+  Max: 120
   AllowURI: true
   URISchemes:
   - http
   - https
-
-Style/ClassAndModuleChildren:
-  Description: Checks style of children classes and modules.
-  Enabled: false
-  EnforcedStyle: compact
-  SupportedStyles:
-    - nested
-    - compact
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-
-Lint/AssignmentInCondition:
-  Description: 'Use assignments in conditions if you want.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#safe-assignment-in-condition'
-  Enabled: false

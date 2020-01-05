@@ -1,6 +1,7 @@
-class User < ApplicationRecord
-  attr_reader :current_password
+# frozen_string_literal: true
 
+# The User Model
+class User < ApplicationRecord
   has_secure_password
 
   before_save :reset_perishable_token
@@ -9,10 +10,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :name, :email, presence: true
   validates :password, length: { minimum: 8 }, if: :password
-
-  def send_password_reset
-    UserMailer.password_reset(self).deliver_later
-  end
 
   private
 

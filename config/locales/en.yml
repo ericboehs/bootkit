@@ -16,23 +16,20 @@
 #
 # This would use the information in config/locales/es.yml.
 #
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
 # To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+# available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  auth:
-    log_in:
-      alert: Please log in first
-
-  global:
-    app_name: bootkit
-    cancel: Cancel
-    update: Update
-    more: More
-    edit: Edit
-    delete: Delete
-    delete_confirm: Are you sure?
-
   nav:
     link: Link
     log_in: Log In
@@ -41,57 +38,3 @@ en:
       account: Account
       messages: Messages
       log_out: Log Out
-
-  password_resets:
-    new:
-      title: Password Reset
-      email: Email
-      reset_password: Reset Password
-    create:
-      notice: Email sent with password reset instructions.
-    edit:
-      title: Password Reset
-      new_password: New Password
-      change_password: Change Password
-    update:
-      notice: Password has been reset!
-
-  sessions:
-    new:
-      email: Email
-      password: Password
-      log_in: Log in
-      notice: Logged in successfully
-      alert: Invalid email or password
-      forgot_password: Forgot password?
-    create:
-      notice: Logged in successfully
-      alert: Invalid email or password
-    destroy:
-      notice: Logged out successfully
-
-  user_mailer:
-    password_reset:
-      subject: Password Reset Instructions
-      content: To reset your password, click the URL below.
-      reset_password: Reset Password
-
-  users:
-    new:
-      name: Name
-      email: Email
-      password: Password
-      sign_up: Sign Up
-    edit:
-      title: Account
-      delete_account: Delete Account
-      delete_confirm: Are you sure? All data will immediately be deleted!
-    form:
-      change_password: Change Password
-    update:
-      notice: Account updated successfully
-      password_incorrect: Incorrect password
-    create:
-      notice: Account created successfully
-    destroy:
-      notice: Account deleted successfully :(
